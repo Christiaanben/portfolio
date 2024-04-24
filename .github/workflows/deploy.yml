@@ -30,10 +30,22 @@ jobs:
 #      - name: Deploy to GitHub Pages
 #        run: npm run deploy
 
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-#          branch: gh-pages  # The target branch for deployment
-          folder: dist      # The folder to deploy
-#          clean: true       # Optional: Cleans the deployment branch automatically before pushing
-#          debug: true       # Optional: Outputs additional logs for debugging
+#      - name: Deploy to GitHub Pages
+#        uses: JamesIves/github-pages-deploy-action@v4
+#        with:
+##          branch: gh-pages  # The target branch for deployment
+#          folder: dist      # The folder to deploy
+##          clean: true       # Optional: Cleans the deployment branch automatically before pushing
+##          debug: true       # Optional: Outputs additional logs for debugging
+
+      - name: Build and Deploy
+        run: |
+          git config --global user.name 'GitHub Actions Bot'
+          git config --global user.email '<your-email>'
+          git checkout -b gh-pages
+          git add -f dist
+          git commit -m "Deploy to GitHub Pages"
+          git push --force origin gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
