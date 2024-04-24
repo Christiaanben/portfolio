@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <the-avatar
-        avatar-url="/profile-photo.jpg"
+        avatar-url="profile-photo.jpg"
     />
   </div>
 </template>
