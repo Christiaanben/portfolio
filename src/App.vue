@@ -3,15 +3,21 @@
     <the-avatar
         avatar-url="profile-photo.jpg"
     />
+    <info-card>
+      <p><strong>Bennie van Eeden</strong></p>
+      <p>Full Stack Developer</p>
+    </info-card>
   </div>
 </template>
 
 <script>
 import TheAvatar from '@/components/TheAvatar.vue'
+import InfoCard from '@/components/InfoCard.vue'
 
 export default {
   name: 'App',
   components: {
+    InfoCard,
     TheAvatar,
   },
 }
