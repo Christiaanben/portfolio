@@ -22,5 +22,6 @@ export default defineComponent({
   box-sizing: border-box;   /* Includes padding in the width calculation */
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 </style>

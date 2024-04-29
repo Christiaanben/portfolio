@@ -99,7 +99,16 @@ export default {
   grid-template-rows: repeat(4, 1fr);
   gap: 10px;
   background-color: #e0e0e0 !important;
+  overflow: hidden;
 }
+
+.contact-cards-container .info-card {
+  height: 100%;
+  width: 100%; /* This will make the width equal to the grid column width */
+  aspect-ratio: 1; /* Maintains a 1:1 aspect ratio making it square */
+  display: flex; /* Allows centering of the image */
+  align-items: center; /* Vertically centers the content */
+  justify-content: center; /* Horizontally centers the content */}
 
 .info-card img {
   max-width: 100%; /* ensures the image is not wider than the card */
