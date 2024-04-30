@@ -1,7 +1,10 @@
 <template>
-  <div class="info-card">
+  <div class="info-card" v-if="href === ''">
     <slot></slot>
   </div>
+  <a class="info-card" :href="href" v-else>
+    <slot></slot>
+  </a>
 </template>
 
 <script>
@@ -9,6 +12,13 @@ import {defineComponent} from 'vue'
 
 export default defineComponent({
   name: 'InfoCard',
+  props: {
+    href: {
+      optional: true,
+      type: String,
+      default: '',
+    },
+  }
 })
 </script>
 
@@ -21,7 +31,6 @@ export default defineComponent({
   margin: 0 auto;        /* Centering in the page and providing some margin */
   box-sizing: border-box;   /* Includes padding in the width calculation */
   width: 100%;
-  height: 100%;
   overflow: hidden;
 }
 </style>

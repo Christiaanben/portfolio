@@ -9,21 +9,21 @@
           <b>Bennie van Eeden</b>
           <div>Full Stack Developer</div>
         </div>
-        <div>rather.chat</div>
+        <div class="employer-logo">
+          <img alt="Rather.chat" src="img/ratherchat-logo.png">
+        </div>
       </info-card>
       <info-card style="grid-row: 2 / -1">Join Bennie's Meeting</info-card>
-      <info-card>Hello! I'm in South Africa</info-card>
+      <info-card class="location-card">Hello! I'm in South Africa</info-card>
       <info-card style="grid-row: 3 / span 2">Their time: 21:24 SAST</info-card>
       <info-card>Schedule a meeting</info-card>
       <info-card class="contact-cards-container">
         <info-card>
           <img alt="Email" src="icons/email.png">
         </info-card>
-        <a href="https://www.linkedin.com/in/bennie-van-eeden-22654a112/">
-          <info-card>
-            <img alt="LinkedIn" src="icons/linkedin.svg">
-          </info-card>
-        </a>
+        <info-card href="https://www.linkedin.com/in/bennie-van-eeden-22654a112/">
+          <img alt="LinkedIn" src="icons/linkedin.svg">
+        </info-card>
         <info-card>
           <img alt="Twitter" src="icons/twitter.svg">
         </info-card>
@@ -74,6 +74,11 @@ export default {
   height: 100%;
 }
 
+.employer-logo {
+  max-width: 150px;
+  max-height: 50%;
+}
+
 .cards-container {
   display: grid;
   grid-template-columns: 3fr 2fr 1fr;
@@ -108,7 +113,8 @@ export default {
   aspect-ratio: 1; /* Maintains a 1:1 aspect ratio making it square */
   display: flex; /* Allows centering of the image */
   align-items: center; /* Vertically centers the content */
-  justify-content: center; /* Horizontally centers the content */}
+  justify-content: center; /* Horizontally centers the content */
+}
 
 .info-card img {
   max-width: 100%; /* ensures the image is not wider than the card */
@@ -120,6 +126,22 @@ export default {
 a .info-card:hover {
   background-color: #f0f0f0;
   opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .cards-container {
+    display: flex; /* Switching from grid to flex */
+    flex-direction: column; /* Stacks the children vertically */
+    max-height: 80vh;
+  }
+
+  .location-card {
+    display: none; /* Hides the location card on smaller screens */
+  }
+
+  .contact-cards-container {
+    display: flex;
+  }
 }
 
 </style>
