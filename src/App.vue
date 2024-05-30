@@ -16,7 +16,9 @@
       <info-card style="grid-row: 2 / -1">Join Bennie's Meeting</info-card>
       <info-card class="location-card">Hello! I'm in South Africa</info-card>
       <info-card style="grid-row: 3 / span 2">Their time: 21:24 SAST</info-card>
-      <info-card>Schedule a meeting</info-card>
+      <info-card>
+        <a href="https://calendly.com/christiaanben/interview">Schedule a Meeting</a>
+      </info-card>
       <info-card class="contact-cards-container">
         <info-card>
           <img alt="Email" src="icons/email.png">
